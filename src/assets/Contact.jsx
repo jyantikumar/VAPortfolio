@@ -52,11 +52,11 @@ const Contact = () => {
           </svg>
           <div>
             <dt className="text-xl font-semibold text-white">Email</dt>
-            <dd className="mt-1 text-lg text-gray-300 hover:text-teal-400 transition duration-150">
-              <a href="mailto:jyantiaustriakumar@gmail.com" className="underline-offset-4 hover:underline">jyantiaustriakumar@gmail.com</a>
+                <dd className="mt-1 **text-base** lg:text-lg text-gray-300 hover:text-teal-400 transition duration-150">
+                <a href="mailto:jyantiaustriakumar@gmail.com" className="underline-offset-4 hover:underline">jyantiaustriakumar@gmail.com</a>
             </dd>
-            <dd className="mt-1 text-lg text-gray-300 hover:text-teal-400 transition duration-150">
-              <a href="mailto:jakumar293@student.mcu.edu.ph" className="underline-offset-4 hover:underline">jakumar293@student.mcu.edu.ph</a>
+            <dd className="mt-1 **text-base** lg:text-lg text-gray-300 hover:text-teal-400 transition duration-150">    
+            <a href="mailto:jakumar293@student.mcu.edu.ph" className="underline-offset-4 hover:underline">jakumar293@student.mcu.edu.ph</a>
             </dd>
           </div>
         </div>
