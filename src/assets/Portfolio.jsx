@@ -59,6 +59,14 @@ const projectData = [
     liveLink:  'https://jyantikumar.github.io/Savings/',
     githubLink: 'https://github.com/jyantikumar/Savings',
   },
+  {
+  id: 8,
+    title: 'CILS: CS/IT Lab Scheduler',
+    description: 'A web-based lab scheduling system for the THE CS/IT Laboratory',
+    tags: ['Vanila PHP', 'BootStrap','HTML'],
+    liveLink:  null,
+    githubLink: 'https://github.com/jyantikumar/CILS2024-25',
+},
 ];
 
 const Portfolio = () => {
