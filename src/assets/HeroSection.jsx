@@ -47,15 +47,15 @@ const HeroSection = () => {
           and an aspiring <span className="font-bold">Front-End developer</span>.
         </p>
         
-    <div className="mt-12 flex flex-col sm:flex-row justify-center space-y-5 sm:space-y-0 sm:space-x-6">
-      
-      <a 
-        href="#portfolio"
-        className="inline-flex items-center justify-center px-8 py-4 border-2 border-teal-400 text-lg font-bold rounded-lg shadow-neon-teal text-white bg-teal-600/30 hover:bg-teal-600/50 transition duration-300 transform hover:scale-105"
-        style={{ boxShadow: '0 0 10px #2dd4bf, 0 0 20px #2dd4bf' }}
-      >
-        Explore Portfolio
-      </a>
+        <div className="mt-12 flex **flex-row** justify-center gap-5 **space-x-6**">
+          <a href="#portfolio" className="inline-flex items-center justify-center px-8 py-4 border-2 border-teal-400 text-lg font-bold rounded-lg shadow-neon-teal text-white bg-teal-600/30 hover:bg-teal-600/50 transition duration-300 transform hover:scale-105" 
+            style={{ boxShadow: '0 0 10px #2dd4bf, 0 0 20px #2dd4bf' }}>
+            Portfolio
+          </a>
+
+          <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-bold rounded-lg text-white bg-transparent hover:bg-white hover:text-gray-900 transition duration-300 transform hover:scale-105">
+            Contact Me
+          </a>
     </div>
           
             
