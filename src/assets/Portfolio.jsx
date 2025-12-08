@@ -19,7 +19,7 @@ const projectData = [
 },
 {
     id: 3,
-    title: 'MCU-HSICS: Inventory Management System for MCU-ITD',
+    title: 'MCU-HSICS: Inventory Management System',
     description: 'A web-based inventory system for the MCU IT Department to efficiently track IT assets.',
     tags: ['PHP', 'HTML/CSS', 'Laravel', 'JavaScript', 'MySql'],
     liveLink: 'https://mcu_hsics.on-forge.com/',
