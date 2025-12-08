@@ -96,7 +96,7 @@ const Portfolio = () => {
         </div>
         
          {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {projectData.map((project) => (
             <div 
               key={project.id}
@@ -128,7 +128,6 @@ const Portfolio = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    // ✅ Corrected: Live Demo button uses teal
                     className="inline-flex items-center space-x-2 text-white bg-teal-600 px-4 py-2 rounded-lg font-medium hover:bg-teal-700 transition duration-200"
                   >
                     <ExternalLink size={20} />
