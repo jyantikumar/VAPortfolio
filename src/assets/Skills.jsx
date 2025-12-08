@@ -67,8 +67,8 @@ const Skills = () => {
         
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-12">
-          {skillData.map((categoryGroup) => (
+        <div className="grid **grid-cols-1** lg:grid-cols-4 gap-x-8 gap-y-12">
+            {skillData.map((categoryGroup) => (
             <div 
               key={categoryGroup.category}
               className="p-8 bg-gray-800 rounded-2xl shadow-2xl border-t-4 border-teal-500/50 transition-shadow duration-300 hover:shadow-teal-500/50"
