@@ -2,16 +2,23 @@ import React from 'react';
 import { ExternalLink, Github } from 'lucide-react'; 
 
 const projectData = [
-  {
-    id: 1,
-    title: 'PHP/Laravel Stories Manager',
-    description: 'A full-stack application for keeping track of stories, progress, and updates.',
-    tags: ['Laravel', 'PHP', 'MySQL'],
-    liveLink: null,
-    githubLink: 'https://github.com/jyantikumar/CRUD',
+   {id: 1,
+    title: 'Mobicel:  Online Selling Platform',
+    description: 'A web-based online selling platform for buying hand-held devices',
+    tags: ['Vanila PHP', 'CSS','HTML'],
+    liveLink:  null,
+    githubLink: 'https://github.com/jyantikumar/ProductSelling',
   },
   {
-    id: 2,
+  id: 2,
+    title: 'CILS: CS/IT Lab Scheduler',
+    description: 'A web-based lab scheduling system for the THE CS/IT Laboratory',
+    tags: ['Vanila PHP', 'BootStrap','HTML'],
+    liveLink:  null,
+    githubLink: 'https://github.com/jyantikumar/CILS2024-25',
+},
+{
+    id: 3,
     title: 'MCU-HSICS: Hardware and Software Inventory Management System for MCU-ITD',
     description: 'A web-based inventory system for the MCU IT Department to efficiently track IT assets.',
     tags: ['PHP', 'HTML/CSS', 'Laravel', 'JavaScript', 'MySql'],
@@ -20,23 +27,7 @@ const projectData = [
 
   },
   {
-    id: 3,
-    title: 'ExpenseMate: Personal Expense Tracker',
-    description: 'A Java console program for managing personal expenses through an easy-to-use text-based interface.',
-    tags: ['Java'],
-    liveLink: null,
-    githubLink: 'https://github.com/jyantikumar/ExpenseMate',
-  },
-   {
     id: 4,
-    title: 'Hundo',
-    description: 'a user-friendly Bingo card generator called HUNDO using C# and .Net, allowing users to generate randomized card content that contains chemical compounds.',
-    tags: ['.Net', 'C#','Desktop App' ],
-    liveLink: null,
-    githubLink: 'https://github.com/jyantikumar/IMPROVED-HUNDO',
-  },
-  {
-    id: 5,
     title: 'Weeekly Portal',
     description: 'A fan portal for the K-pop group Weeekly, featuring their complete discography, music videos, and detailed information about the members and releases.',
     tags: ['React JS', 'Tailwind CSS','HTML', 'API Integration'],
@@ -44,6 +35,14 @@ const projectData = [
     githubLink: 'https://github.com/jyantikumar/Wkly',
   },
   {
+    id: 5,
+    title: 'PHP/Laravel Stories Manager',
+    description: 'A full-stack application for keeping track of stories, progress, and updates.',
+    tags: ['Laravel', 'PHP', 'MySQL'],
+    liveLink: null,
+    githubLink: 'https://github.com/jyantikumar/CRUD',
+  },
+   {
     id: 6,
     title: 'MCU Grade Converter',
     description: 'A responsive JavaScript-based grade converter designed for MCU students.',
@@ -60,13 +59,21 @@ const projectData = [
     githubLink: 'https://github.com/jyantikumar/Savings',
   },
   {
-  id: 8,
-    title: 'CILS: CS/IT Lab Scheduler',
-    description: 'A web-based lab scheduling system for the THE CS/IT Laboratory',
-    tags: ['Vanila PHP', 'BootStrap','HTML'],
-    liveLink:  null,
-    githubLink: 'https://github.com/jyantikumar/CILS2024-25',
-},
+    id: 8,
+    title: 'ExpenseMate: Personal Expense Tracker',
+    description: 'A Java console program for managing personal expenses through an easy-to-use text-based interface.',
+    tags: ['Java'],
+    liveLink: null,
+    githubLink: 'https://github.com/jyantikumar/ExpenseMate',
+  },
+   {
+    id: 9,
+    title: 'Hundo',
+    description: 'a user-friendly Bingo card generator called HUNDO using C# and .Net, allowing users to generate randomized card content that contains chemical compounds.',
+    tags: ['.Net', 'C#','Desktop App' ],
+    liveLink: null,
+    githubLink: 'https://github.com/jyantikumar/IMPROVED-HUNDO',
+  },
 ];
 
 const Portfolio = () => {
