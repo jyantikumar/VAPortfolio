@@ -74,6 +74,14 @@ const projectData = [
     liveLink: null,
     githubLink: 'https://github.com/jyantikumar/IMPROVED-HUNDO',
   },
+  {
+    id: 10,
+    title: 'AksharBlast',
+    description: 'a user-friendly Hindi alphabet learning desktop application.',
+    tags: ['Java', 'Desktop App' ],
+    liveLink: null,
+    githubLink: 'https://github.com/jyantikumar/IMPROVED-HUNDO',
+  },
 ];
 
 const Portfolio = () => {
