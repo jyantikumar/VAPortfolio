@@ -79,8 +79,8 @@ const projectData = [
     title: 'AksharBlast',
     description: 'a user-friendly Hindi alphabet learning desktop application.',
     tags: ['Java', 'Desktop App' ],
-    liveLink: null,
-    githubLink: 'https://github.com/jyantikumar/IMPROVED-HUNDO',
+    liveLink: 'https://drive.google.com/file/d/1WwcwGRdVsTAprfTJqjvK3NClSq9g4EuY/view?usp=sharing',
+    githubLink: null,
   },
 ];
 
