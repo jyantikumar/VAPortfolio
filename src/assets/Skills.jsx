@@ -1,56 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-    SiReact, SiTailwindcss, SiJavascript, SiHtml5, SiCss3, SiBootstrap, 
-    SiPhp, SiLaravel, SiMysql, 
-    SiCplusplus, 
-    SiPython, SiKotlin, SiVuedotjs, SiGit, SiGithub, 
     SiNotion, SiCanva, SiGoogle, SiZoom, 
     SiCalendly as CalendlyIcon, 
     SiGmail, 
     SiSlack,
     SiDropbox,
     SiDiscord, 
-
 } from 'react-icons/si';
-import { FaLaptopCode, FaTools, FaFileWord, FaFileExcel, FaFilePowerpoint, FaBookOpen } from 'react-icons/fa'; 
-
-const developmentSkills = [
-    {
-        category: 'Front-End Development',
-        skills: [
-            { name: 'React', icon: SiReact, color: '#61DAFB' },
-            { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
-            { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-            { name: 'HTML/CSS', icon: [SiHtml5, SiCss3], color: '#E34F26' },
-            { name: 'Bootstrap', icon: SiBootstrap, color: '#7952B3' },
-        ],
-    },
-    {
-        category: 'Back-End & Database',
-        skills: [
-            { name: 'PHP', icon: SiPhp, color: '#777BB4' },
-            { name: 'Laravel', icon: SiLaravel, color: '#FF2D20' },
-            { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
-        ],
-    },
-    {
-        category: 'Other Languages',
-        skills: [
-            { name: 'C++', icon: SiCplusplus, color: '#00599C' }, 
-            { name:'Python', icon: SiPython, color: '#3776AB' },
-            { name:'Kotlin', icon: SiKotlin, color: '#7F52FF' },
-            { name:'VB.NET', icon: SiVuedotjs, color: '#4FC08D' } 
-        ],
-    },
-    {
-        category: 'Tools',
-        skills: [
-            { name: 'Xampp', icon: null, color: '#F06631' }, 
-            { name:'Visual Studio Code', icon: null, color: '#007ACC' }, 
-            { name:'Git/GitHub', icon: SiGithub, color: '#000000' },
-        ],
-    },
-];
+import { FaTools, FaFileWord, FaFileExcel, FaFilePowerpoint } from 'react-icons/fa'; 
 
 const administrativeSkills = [
     {
@@ -74,7 +31,7 @@ const administrativeSkills = [
         category: 'File Management & Organization',
         skills: [
             { name: 'Dropbox', icon: SiDropbox, color: '#0061FF' },
-            { name: 'Google Drive', icon: SiGoogle, color: '#4285F4' }, // <-- NEW
+            { name: 'Google Drive', icon: SiGoogle, color: '#4285F4' },
             { name: 'Notion', icon: SiNotion, color: '#000000' },
         ],
     },
@@ -85,13 +42,13 @@ const administrativeSkills = [
         ],
     },
     {
-        category: 'Office, Document & Note Taking Tools', // Renamed category
+        category: 'Office, Document & Note Taking Tools',
         skills: [
             { name: 'Google Docs', icon: SiGoogle, color: '#4285F4' },
             { name: 'Google Sheets', icon: SiGoogle, color: '#0F9D58' },
-            { name: 'MS Word', icon: FaFileWord, color: '#2B579A' },       // <-- NEW
-            { name: 'MS Excel', icon: FaFileExcel, color: '#217346' },     // <-- NEW
-            { name: 'MS PowerPoint', icon: FaFilePowerpoint, color: '#D24726' }, // <-- NEW
+            { name: 'MS Word', icon: FaFileWord, color: '#2B579A' },
+            { name: 'MS Excel', icon: FaFileExcel, color: '#217346' },
+            { name: 'MS PowerPoint', icon: FaFilePowerpoint, color: '#D24726' },
             { name: 'Notion', icon: SiNotion, color: '#000000' },
 
         ],
@@ -102,34 +59,23 @@ const administrativeSkills = [
             { name: 'Canva (Design)', icon: SiCanva, color: '#00C4CC' },
         ],
     },
-
-];
-const tabs = [
-    { name: 'Administrative', data: administrativeSkills, icon: FaTools },
-        { name: 'Development', data: developmentSkills, icon: FaLaptopCode },
-
 ];
 
-
-const SkillIcon = ({ icon: Icon, name, color, isCombined = false }) => {
-    // Check if Icon is a function/component before assigning size/margin
+const SkillIcon = ({ icon: Icon, name, color }) => {
     const hasIcon = typeof Icon === 'function'; 
-    const iconSize = isCombined ? 32 : 36;
-    const iconMargin = isCombined ? 'mr-1' : 'mr-2';
+    const iconMargin = 'mr-2';
 
     return (
         <div 
             className="flex items-center justify-center p-4 bg-gray-700 rounded-xl text-base font-medium text-white transition duration-200 hover:bg-teal-600 hover:text-white transform hover:scale-105 shadow-lg group"
             title={name} 
         >
-            {/* Conditional rendering for the icon */}
             {hasIcon && (
                 <div className={`transition duration-200 group-hover:text-white ${iconMargin}`} style={{ color: color }}>
-                    <Icon size={iconSize} /> 
+                    <Icon size={36} /> 
                 </div>
             )}
             
-            {/* Render a placeholder icon/name if no icon exists */}
             {!hasIcon && (
                  <div className="flex items-center justify-center h-9 w-9 border-2 border-dashed border-gray-500 rounded-full mr-2">
                     <span className="text-xs text-gray-400 font-bold">?</span>
@@ -142,34 +88,10 @@ const SkillIcon = ({ icon: Icon, name, color, isCombined = false }) => {
 };
 
 const Skills = () => {
-    const [activeTab, setActiveTab] = useState('Development');
-
-    const currentSkillData = tabs.find(tab => tab.name === activeTab).data;
-
-    // --- START: Removed the old TabButton component definition ---
-    /*
-    const TabButton = ({ name, icon: Icon }) => {
-        const isActive = activeTab === name;
-        return (
-            <button
-                onClick={() => setActiveTab(name)}
-                className={`flex-1 flex items-center justify-center py-3 px-4 text-lg font-bold transition-all duration-300 rounded-t-lg
-                    ${isActive 
-                        ? 'text-white bg-gray-800 border-b-4 border-teal-500' 
-                        : 'text-gray-400 bg-gray-700 hover:text-teal-400 hover:bg-gray-600 border-b-4 border-transparent'
-                    }`}
-            >
-                <Icon className="mr-2" size={20} />
-                {name}
-            </button>
-        );
-    };
-    */
-    // --- END: Removed the old TabButton component definition ---
+    const currentSkillData = administrativeSkills;
 
     return (
         <section className="relative overflow-hidden bg-gray-900 text-white min-h-screen">
-            {/* Background Grids and Waves remain... */}
             <div 
                 className="absolute inset-x-0 bottom-0 h-1/4 opacity-20"
                 style={{ backgroundImage: 'linear-gradient(to top, rgba(16, 185, 129, 0.1), transparent), repeating-linear-gradient(to bottom, #1f2937, #1f2937 1px, transparent 1px, transparent 40px)', backgroundSize: '100% 40px' }}
@@ -190,32 +112,11 @@ const Skills = () => {
             <div className="flex flex-col pt-24 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
                 <div className="text-center mb-10">
                     <h2 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl border-b-4 border-teal-500 inline-block pb-2">
-                        My Skills
+                        Tools
                     </h2>
                 </div>
 
-                {/* --- START: UPDATED TAB NAVIGATION --- */}
-                <div className="flex justify-center mb-10 space-x-4 border-b border-gray-700">
-                    {tabs.map((tab) => {
-                        const Icon = tab.icon;
-                        const isActive = activeTab === tab.name; // tab.name is the category/tab identifier
-                        return (
-                            <button
-                                key={tab.name}
-                                onClick={() => setActiveTab(tab.name)}
-                                className={`flex items-center space-x-3 py-3 px-6 text-lg font-semibold transition-colors duration-300 rounded-t-lg
-                                    ${isActive 
-                                        ? 'text-teal-400 border-b-4 border-teal-500 bg-gray-800/50' 
-                                        : 'text-gray-400 hover:text-teal-400 hover:border-gray-600 border-b-4 border-transparent'
-                                    }`}
-                            >
-                                <Icon className="w-6 h-6" />
-                                <span>{tab.name}</span>
-                            </button>
-                        );
-                    })}
-                </div>
-                {/* --- END: UPDATED TAB NAVIGATION --- */}
+                {/* Removed Tab Navigation */}
                 
                 {/* SKILLS CONTENT: Display skills based on activeTab */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -229,34 +130,10 @@ const Skills = () => {
                         </h3>
                         
                         <div className="grid grid-cols-2 gap-3">
-                            {categoryGroup.skills.map((skill) => {
-                                // 1. Check if it's a combined skill like HTML/CSS
-                                if (Array.isArray(skill.icon)) {
-                                    // Destructure the icons into variables starting with an uppercase letter
-                                    const [Icon1, Icon2] = skill.icon; 
-                                    
-                                    return (
-                                        <div 
-                                            key={skill.name}
-                                            className="flex items-center justify-center p-4 bg-gray-700 rounded-xl text-base font-medium text-white transition duration-200 hover:bg-teal-600 hover:text-white transform hover:scale-105 shadow-lg group"
-                                            title={skill.name}
-                                        >
-                                            <div className="flex items-center justify-center">
-                                                {/* Rendering combined icons using the new uppercase variables */}
-                                                <div className={`transition duration-200 group-hover:text-white mr-1`} style={{ color: skill.color }}>
-                                                    <Icon1 size={32} /> 
-                                                </div>
-                                                <div className={`transition duration-200 group-hover:text-white mr-2`} style={{ color: skill.color }}>
-                                                    <Icon2 size={32} /> 
-                                                </div>
-                                            </div>
-                                            <span className="sr-only lg:not-sr-only text-sm lg:text-base font-semibold group-hover:text-white">{skill.name}</span>
-                                        </div>
-                                    );
-                                }
-                                // 2. Single icon skill
-                                return <SkillIcon key={skill.name} icon={skill.icon} name={skill.name} color={skill.color} />;
-                            })}
+                            {categoryGroup.skills.map((skill) => (
+                                // No combined icons exist in the administrative skills list, so this is simpler
+                                <SkillIcon key={skill.name} icon={skill.icon} name={skill.name} color={skill.color} />
+                            ))}
                         </div>
                     </div>
                     ))}
@@ -266,4 +143,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default Skills;  

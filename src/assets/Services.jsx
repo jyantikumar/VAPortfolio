@@ -1,60 +1,8 @@
-import React, { useState } from 'react';
-import { Briefcase, Settings, Globe, Github } from 'lucide-react'; 
-
-const webDevelopmentProjects = [
-    {
-        title: 'Mobicel: Online Selling Platform',
-        description: 'A web-based online selling platform for buying hand-held devices.',
-        tags: ['Vanila PHP', 'CSS', 'HTML'], 
-        liveLink: null, 
-        githubLink: 'https://github.com/jyantikumar/ProductSelling',
-    },
-    {
-        title: 'CILS: CS/IT Lab Scheduler',
-        description: 'A web-based lab scheduling system for the CS/IT Laboratory.',
-        tags: ['Vanila PHP', 'BootStrap', 'HTML'], 
-        liveLink: null,
-        githubLink: 'https://github.com/jyantikumar/CILS2024-25',
-    },
-    {
-        title: 'MCU-HSICS: Inventory Management System',
-        description: 'A web-based inventory system for the MCU IT Department to efficiently track IT assets.',
-        tags: ['PHP', 'HTML/CSS', 'Laravel', 'JavaScript', 'MySql'],
-        liveLink: 'https://mcu_hsics.on-forge.com/',
-        githubLink: null,
-    },
-    {
-        title: 'Weeekly Portal',
-        description: 'A fan portal for the K-pop group Weeekly, featuring their complete discography and member details.',
-        tags: ['React JS', 'Tailwind CSS', 'HTML', 'API Integration'],
-        liveLink: 'https://jyantikumar.github.io/Wkly/',
-        githubLink: 'https://github.com/jyantikumar/Wkly',
-    },
-    {
-        title: 'PHP/Laravel Stories Manager',
-        description: 'A full-stack application for keeping track of stories, progress, and updates.',
-        tags: ['Laravel', 'PHP', 'MySQL'],
-        liveLink: null,
-        githubLink: 'https://github.com/jyantikumar/CRUD',
-    },
-    {
-        title: 'MCU Grade Converter',
-        description: 'A responsive JavaScript-based grade converter designed for MCU students.',
-        tags: ['JavaScript', 'Tailwind CSS', 'HTML'],
-        liveLink: 'https://jyantikumar.github.io/grades/',
-        githubLink: 'https://github.com/jyantikumar/grades',
-    },
-    {
-        title: 'Savings Calculator',
-        description: 'A responsive JavaScript web app that calculates savings interest.',
-        tags: ['JavaScript', 'Tailwind CSS', 'HTML'],
-        liveLink: 'https://jyantikumar.github.io/Savings/',
-        githubLink: 'https://github.com/jyantikumar/Savings',
-    },
-];
+import React from 'react';
+import { Briefcase, Settings } from 'lucide-react'; 
 
 const administrativeSupportContent = {
-    category: 'Administrative Support & Tools',
+    category: 'Services',
     icon: Settings,
     mainDescription: "Providing organized and reliable administrative support to help clients manage tasks efficiently, maintain smooth daily operations, and stay productive. I focus on implementing systems that save time and reduce stress.",
     samplePortfolioLink: 'https://jyanti-va-portfolio.my.canva.site/', 
@@ -92,25 +40,11 @@ const administrativeSupportContent = {
     ]
 };
 
-const webDevelopmentContent = {
-    category: 'Web Development (Projects)',
-    icon: Briefcase,
-    mainDescription: "Building clean, efficient web apps with Laravel and JavaScript, focused on usability and performance.",
-    content: webDevelopmentProjects, 
-};
-
-const serviceData = [
-    administrativeSupportContent, 
-    webDevelopmentContent,        
-];
-// 
-
 const Services = () => {
-    const [activeTab, setActiveTab] = useState(serviceData[0].category); 
-    // --------------------------------------------------------------------
-    const activeService = serviceData.find(s => s.category === activeTab);
+    // Only use the administrative content
+    const activeService = administrativeSupportContent;
     const activeContent = activeService?.content || [];
-
+    const activeTab = activeService.category; // Retain category name for heading
 
     return (
         <section className="relative overflow-hidden bg-gray-900 text-white min-h-screen">
@@ -134,31 +68,10 @@ const Services = () => {
             <div className="flex flex-col pt-24 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl border-b-4 border-teal-500 inline-block pb-2">
-                        Services Offered
+                        {activeTab}
                     </h2>
                 </div>
                 
-                {/* Tab Navigation */}
-                <div className="flex justify-center mb-10 space-x-4 border-b border-gray-700">
-                    {serviceData.map((tab) => {
-                        const Icon = tab.icon;
-                        const isActive = activeTab === tab.category;
-                        return (
-                            <button
-                                key={tab.category}
-                                onClick={() => setActiveTab(tab.category)}
-                                className={`flex items-center space-x-3 py-3 px-6 text-lg font-semibold transition-colors duration-300 rounded-t-lg
-                                    ${isActive 
-                                        ? 'text-teal-400 border-b-4 border-teal-500 bg-gray-800/50' 
-                                        : 'text-gray-400 hover:text-teal-400 hover:border-gray-600 border-b-4 border-transparent'
-                                    }`}
-                            >
-                                <Icon className="w-6 h-6" />
-                                <span>{tab.category}</span>
-                            </button>
-                        );
-                    })}
-                </div>
 
                 {activeService && (
                     <div className="p-6 mb-10 bg-gray-800 rounded-xl border-l-4 border-teal-500 shadow-xl">
@@ -166,8 +79,7 @@ const Services = () => {
                             {activeService.mainDescription}
                         </p>
 
-                        {/* === CANVA PORTFOLIO LINK (Admin Tab Only) === */}
-                        {activeService.samplePortfolioLink && activeTab === 'Administrative Support & Tools' && (
+                        {activeService.samplePortfolioLink && (
                             <a 
                                 href={activeService.samplePortfolioLink}
                                 target="_blank"
@@ -178,19 +90,18 @@ const Services = () => {
                                 <span>View Sample</span>
                             </a>
                         )}
-                        {/* ============================================= */}
+                        {/* ============================= */}
                     </div>
                 )}
 
                 <div className="bg-gray-800 p-8 rounded-2xl shadow-2xl border-t-4 border-teal-500/50">
                     <h3 className="text-3xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-3">
-                        {activeTab === 'Web Development (Projects)' ? 'Web Development Projects' : 'Key Offerings & Tools'}
+                        Key Offerings & Tools
                     </h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {activeContent.map((item, index) => {
-                            const tagsToDisplay = item.tags || item.tools; 
-                            const isWebDev = activeTab === 'Web Development (Projects)';
+                            const tagsToDisplay = item.tools; 
                             
                             return (
                                 <div 
@@ -205,7 +116,7 @@ const Services = () => {
                                             {item.description}
                                         </p>
                                         
-                                        {!isWebDev && item.resultMetric && (
+                                        {item.resultMetric && (
                                             <div className="p-3 bg-teal-900/40 rounded-lg my-4 border border-teal-500">
                                                 <span className="text-sm font-bold text-teal-500 block mb-1">
                                                     Impact/Result:
@@ -220,7 +131,7 @@ const Services = () => {
 
                                         <div className="mt-4 mb-6">
                                             <span className="text-sm font-bold text-teal-300 block mb-2">
-                                                {isWebDev ? 'Tech Stack:' : 'Key Tools:'}
+                                                Key Tools:
                                             </span>
                                             <div className="flex flex-wrap gap-2">
                                                 {tagsToDisplay && tagsToDisplay.map((tag) => (
@@ -234,34 +145,6 @@ const Services = () => {
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* === PROJECT LINKS (Web Dev Tab Only) === */}
-                                    {isWebDev && (item.liveLink || item.githubLink) && (
-                                        <div className="flex space-x-4 mt-auto pt-4 border-t border-gray-600">
-                                            {item.liveLink && (
-                                                <a 
-                                                    href={item.liveLink} 
-                                                    target="_blank" 
-                                                    rel="noopener noreferrer" 
-                                                    className="flex items-center space-x-2 text-sm font-semibold text-white bg-teal-600 px-4 py-2 rounded-full hover:bg-teal-500 transition-colors duration-200 shadow-md"
-                                                >
-                                                    <Globe className="w-4 h-4" />
-                                                    <span>Live Demo</span>
-                                                </a>
-                                            )}
-                                            {item.githubLink && (
-                                                <a 
-                                                    href={item.githubLink} 
-                                                    target="_blank" 
-                                                    rel="noopener noreferrer" 
-                                                    className="flex items-center space-x-2 text-sm font-semibold text-gray-300 bg-gray-600 px-4 py-2 rounded-full hover:bg-gray-500 transition-colors duration-200 shadow-md"
-                                                >
-                                                    <Github className="w-4 h-4" />
-                                                    <span>GitHub</span>
-                                                </a>
-                                            )}
-                                        </div>
-                                    )}
                                 </div>
                             );
                         })}
