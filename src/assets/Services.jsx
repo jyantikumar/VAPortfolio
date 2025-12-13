@@ -53,58 +53,61 @@ const webDevelopmentProjects = [
     },
 ];
 
+const administrativeSupportContent = {
+    category: 'Administrative Support & Tools',
+    icon: Settings,
+    mainDescription: "Providing organized and reliable administrative support to help clients manage tasks efficiently, maintain smooth daily operations, and stay productive. I focus on implementing systems that save time and reduce stress.",
+    samplePortfolioLink: 'https://jyanti-va-portfolio.my.canva.site/', 
+    content: [
+        {
+            title: 'Email & Inbox Management System',
+            description: 'Organizing, filtering, and responding to emails professionally to keep the client’s inbox under control, establishing a structured filing system (Action, Delegate, Hold, Archive).',
+            tools: ['Gmail','Microsoft Outlook'],
+            resultMetric: 'Stayed on top of class announcements, assignment deadlines, and professor communications, helping me manage coursework efficiently and avoid missing important tasks.'
+        },
+        {
+            title: 'File & Cloud Management Structure',
+            description: 'Designed and implemented a standardized file structure in Google Drive, including version control and access permissions.',
+            tools: ['Google Drive','OneDrive', 'Notion'],
+            resultMetric: 'Kept all lecture notes, project files, and study materials organized, making it easier to prepare for exams and complete assignments on time.'
+        },
+        {
+            title: 'Data Entry & Record Keeping Automation',
+            description: 'Accurately inputting and maintaining high-volume client data in spreadsheets and databases, utilizing template formulas for error-checking.',
+            tools: ['Microsoft Excel','Google Sheets'],
+            resultMetric: 'Tracked grades, project timelines, and research data accurately, helping me monitor my academic progress and stay organized throughout the semester.'
+        },
+        {
+            title: 'Scheduling & Appointment Coordination',
+            description: 'Managing complex calendars, coordinating meetings across multiple time zones, and setting up automated booking systems.',
+            tools: ['Google Calendar', 'Microsoft Outlook Calendar', 'Calendly', 'Zoom', 'Microsoft Teams'],
+            resultMetric: 'Effectively scheduling personal schedules, project meetings, and classes, improving my time management.'
+        },
+        {
+            title: 'Expense Tracking',
+            description: 'Recording expenses and maintaining simple financial records using structured templates.',
+            tools: ['Microsoft Excel','Google Sheets'],
+            resultMetric: 'Monitored personal and project-related expenses, helping me manage my budget better and focus on academic priorities without financial distractions.'
+        }
+    ]
+};
+
+const webDevelopmentContent = {
+    category: 'Web Development (Projects)',
+    icon: Briefcase,
+    mainDescription: "Building clean, efficient web apps with Laravel and JavaScript, focused on usability and performance.",
+    content: webDevelopmentProjects, 
+};
+
 const serviceData = [
-    {
-        category: 'Web Development (Projects)',
-        icon: Briefcase,
-        mainDescription: "Building clean, efficient web apps with Laravel and JavaScript, focused on usability and performance.",
-        content: webDevelopmentProjects, 
-    },
-    {
-        category: 'Administrative Support & Tools',
-        icon: Settings,
-        mainDescription: "Providing organized and reliable administrative support to help clients manage tasks efficiently, maintain smooth daily operations, and stay productive. I focus on implementing systems that save time and reduce stress.",
-        samplePortfolioLink: 'https://jyanti-va-portfolio.my.canva.site/', 
-        content: [
-           {
-    title: 'Email & Inbox Management System',
-    description: 'Organizing, filtering, and responding to emails professionally to keep the client’s inbox under control, establishing a structured filing system (Action, Delegate, Hold, Archive).',
-    tools: ['Gmail','Microsoft Outlook'],
-    resultMetric: 'Stayed on top of class announcements, assignment deadlines, and professor communications, helping me manage coursework efficiently and avoid missing important tasks.'
-},
-{
-    title: 'File & Cloud Management Structure',
-    description: 'Designed and implemented a standardized file structure in Google Drive, including version control and access permissions.',
-    tools: ['Google Drive','OneDrive', 'Notion'],
-    resultMetric: 'Kept all lecture notes, project files, and study materials organized, making it easier to prepare for exams and complete assignments on time.'
-},
-{
-    title: 'Data Entry & Record Keeping Automation',
-    description: 'Accurately inputting and maintaining high-volume client data in spreadsheets and databases, utilizing template formulas for error-checking.',
-    tools: ['Microsoft Excel','Google Sheets'],
-    resultMetric: 'Tracked grades, project timelines, and research data accurately, helping me monitor my academic progress and stay organized throughout the semester.'
-},
-{
-    title: 'Scheduling & Appointment Coordination',
-    description: 'Managing complex calendars, coordinating meetings across multiple time zones, and setting up automated booking systems.',
-    tools: ['Google Calendar', 'Microsoft Outlook Calendar', 'Calendly', 'Zoom', 'Microsoft Teams'],
-    resultMetric: 'Effectively scheduling personal schedules, project meetings, and classes, improving my time management.'
-},
-{
-    title: 'Expense Tracking',
-    description: 'Recording expenses and maintaining simple financial records using structured templates.',
-    tools: ['Microsoft Excel','Google Sheets'],
-    resultMetric: 'Monitored personal and project-related expenses, helping me manage my budget better and focus on academic priorities without financial distractions.'
-}
-
-
-        ]
-    },
+    administrativeSupportContent, 
+    webDevelopmentContent,        
 ];
-
+// 
 
 const Services = () => {
-    const [activeTab, setActiveTab] = useState(serviceData[0].category);
+    const [activeTab, setActiveTab] = useState(serviceData[0].category); 
+    // --------------------------------------------------------------------
     const activeService = serviceData.find(s => s.category === activeTab);
     const activeContent = activeService?.content || [];
 
@@ -181,7 +184,7 @@ const Services = () => {
 
                 <div className="bg-gray-800 p-8 rounded-2xl shadow-2xl border-t-4 border-teal-500/50">
                     <h3 className="text-3xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-3">
-                        {activeTab === 'Web Development (Projects)' ? 'Web Development Projects' : 'Experience & Tools'}
+                        {activeTab === 'Web Development (Projects)' ? 'Web Development Projects' : 'Key Offerings & Tools'}
                     </h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -192,7 +195,7 @@ const Services = () => {
                             return (
                                 <div 
                                     key={index}
-                                    className="p-6 bg-gray-700 rounded-xl shadow-lg border-l-4 border-teal-900 hover:shadow-teal-500/30 transition-shadow duration-300 flex flex-col text-teal-800 justify-between"
+                                    className="p-6 bg-gray-700 rounded-xl shadow-lg border-l-4 border-teal-900 hover:shadow-teal-500/30 transition-shadow duration-300 flex flex-col justify-between"
                                 >
                                     <div>
                                         <h4 className="text-xl font-semibold text-white mb-3">
@@ -202,7 +205,6 @@ const Services = () => {
                                             {item.description}
                                         </p>
                                         
-                                        {/* === IMPACT / RESULT METRIC (Admin Tab Only) === */}
                                         {!isWebDev && item.resultMetric && (
                                             <div className="p-3 bg-teal-900/40 rounded-lg my-4 border border-teal-500">
                                                 <span className="text-sm font-bold text-teal-500 block mb-1">

@@ -13,6 +13,9 @@ function App() {
       <section id="about" className="h-max text-white"> 
       <HeroSection />
       </section>
+      <section id="tools" className="h-max text-white"> 
+      <Skills />
+      </section>
       <section id="services" className="h-max text-white"> 
       <Services />
       </section>
