@@ -59,7 +59,7 @@ const HeroSection = () => {
             <span className="text-teal-400">with a slight obssesion of keeping things organized.
    </span>       </p>
             <p className="mt-8 text-xl text-gray-300 mx-auto md:mx-0 font-light text-center md:text-left">
-             <span className="text-teal-400"> A dedicated and aspiring <span className="font-bold">part-time</span> Virtual Assistant and Administrative Support Specialist</span>
+             <span className="text-teal-400"> A dedicated and aspiring <span className="font-bold">part-time</span> Virtual Assistant and Administrative Support Specialist </span>
              committed to helping clients enhance productivity through efficient task management and organizational skills.
             I help busy people stay organized.
              
