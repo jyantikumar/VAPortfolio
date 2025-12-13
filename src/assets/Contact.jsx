@@ -104,12 +104,12 @@ const Contact = () => {
                             Schedule a Meeting
                         </h3>
                         <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                            Let’s make your day-to-day smoother! Book a no-cost consultation and find out how I can support you as your VA.        
+                            Let’s make your day-to-day smoother! Book a no-cost meeting and find out how I can support you as your VA.        
                         </p>
                         
                         <PopupWidget
                             url="https://calendly.com/jyantiaustriakumar"
-                            text="Book a consultation"
+                            text="Book a meeting"
                             rootElement={rootElement} 
                             className="inline-block bg-teal-500 text-white font-bold tracking-wider uppercase px-8 py-3 rounded-full shadow-lg hover:bg-teal-400 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-opacity-50"
                         />
