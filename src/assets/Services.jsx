@@ -181,7 +181,7 @@ const Services = () => {
 
                 <div className="bg-gray-800 p-8 rounded-2xl shadow-2xl border-t-4 border-teal-500/50">
                     <h3 className="text-3xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-3">
-                        {activeTab === 'Web Development (Projects)' ? 'Web Development Projects' : 'Key Offerings & Tools'}
+                        {activeTab === 'Web Development (Projects)' ? 'Web Development Projects' : 'Experience & Tools'}
                     </h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -16,9 +16,6 @@ function App() {
       <section id="services" className="h-max text-white"> 
       <Services />
       </section>
-      <section id="skills" className="h-max text-white"> 
-      <Skills />
-      </section>
       <section id="contact" className="h-max text-white"> 
       <Contact />
       </section>
