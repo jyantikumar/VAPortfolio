@@ -36,6 +36,12 @@ const skillData = [
       { name: 'Git/GitHub' },
       { name: 'VS Code' },
       { name: 'Notion' }, 
+      { name:'Canva'},
+      { name:'Google Workspace' },
+      { name:'Microsoft Office' },
+      { name:'Zoom' }
+
+
     ],
   },
 ];

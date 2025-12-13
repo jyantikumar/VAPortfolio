@@ -38,7 +38,7 @@ const Contact = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
           <div>
-            <dt className="text-xl font-semibold text-white">Call Us</dt>
+            <dt className="text-xl font-semibold text-white">Call Me</dt>
             <dd className="mt-1 text-lg text-gray-300 hover:text-teal-400 transition duration-150">
               <a href="tel:+63 923 400 9645" className="underline-offset-4 hover:underline">+63 923 400 9645</a>
             </dd>
@@ -55,9 +55,6 @@ const Contact = () => {
             <dd className="mt-1 text-lg text-gray-300 hover:text-teal-400 transition duration-150">
               <a href="mailto:jyantiaustriakumar@gmail.com" className="**text-sm md:text-lg** underline-offset-4 hover:underline">jyantiaustriakumar@gmail.com</a>
             </dd>
-            <dd className="mt-1 text-lg text-gray-300 hover:text-teal-400 transition duration-150">
-              <a href="mailto:jakumar293@student.mcu.edu.ph" className="**text-sm md:text-lg** underline-offset-4 hover:underline">jakumar293@student.mcu.edu.ph</a>
-            </dd>
           </div>
         </div>
 
@@ -73,6 +70,24 @@ const Contact = () => {
             </dd>
           </div>
         </div>
+        <div className="flex items-start">
+    {/* LinkedIn Icon */}
+    <svg 
+        className="flex-shrink-0 h-8 w-8 text-teal-500 mr-5" 
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 24 24" 
+        fill="currentColor"
+    >
+        <title>LinkedIn icon</title>
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.082 0-1.782-.74-1.782-1.63 0-.916.7-1.63 1.802-1.63s1.782.714 1.802 1.63c0 .89-1.06 1.63-1.821 1.63zm3.554 12.02V9H1.782v10.452h3.555z" />
+    </svg>
+    <div>
+        <dt className="text-xl font-semibold text-white">LinkedIn</dt>
+        <dd className="mt-1 text-lg text-gray-300 hover:text-teal-400 transition duration-150">
+            <a href="https://www.linkedin.com/in/jyanti-kumar/" target="_blank" rel="noopener noreferrer" className="underline-offset-4 hover:underline">linkedin.com/in/jyanti-kumar/</a>
+        </dd>
+    </div>
+</div>
       </dl>
     </div>
     
