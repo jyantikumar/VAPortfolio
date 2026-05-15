@@ -55,19 +55,24 @@ const HeroSection = () => {
           </h2>
 
           <p className="mt-8 text-xl text-gray-300 mx-auto md:mx-0 font-light text-center md:text-left">
-            I'm a <span className="text-teal-400">graduating IT student</span> juggling coffee, codes, and deadlines—
-            <span className="text-teal-400">with a slight obsession of keeping things organized.
-   </span>       </p>
-            <p className="mt-8 text-xl text-gray-300 mx-auto md:mx-0 font-light text-center md:text-left">
-             <span className="text-teal-400"> A dedicated and aspiring <span className="font-bold">part-time</span> Virtual Assistant and Administrative Support Specialist </span>
-             committed to helping clients enhance productivity through efficient task management and organizational skills.
-            I help busy people stay organized.
-             
-          </p>
-            <p className="mt-8 text-xl text-gray-300 mx-auto md:mx-0 font-light text-center md:text-left">
-             I focus on <span className="text-teal-400">detail, efficiency, and making things run smoothly. </span> 
-            If it involves emails, spreadsheets, scheduling, or anything in between, I’ve got it covered.
-            </p>
+    I'm someone who thrives on organization, efficiency, and getting things done—
+    <span className="text-teal-400">with a slight obsession for keeping everything in order.</span>
+</p>
+
+<p className="mt-8 text-xl text-gray-300 mx-auto md:mx-0 font-light text-center md:text-left">
+    <span className="text-teal-400">
+        A dedicated <span className="font-bold">Virtual Assistant and Administrative Support Specialist</span>
+    </span>
+    {" "}committed to helping clients improve productivity through efficient task management,
+    organization, and reliable administrative support. I help busy professionals stay organized
+    and focused on what matters most.
+</p>
+
+<p className="mt-8 text-xl text-gray-300 mx-auto md:mx-0 font-light text-center md:text-left">
+    I focus on <span className="text-teal-400">detail, efficiency, and making things run smoothly.</span>
+    {" "}Whether it’s managing emails, organizing spreadsheets, scheduling tasks,
+    or handling day-to-day administrative work, I’ve got it covered.
+</p>
 
           
           
